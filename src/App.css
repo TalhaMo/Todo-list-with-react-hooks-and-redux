@@ -1,4 +1,19 @@
 .App {
   text-align: center;
 }
-
+.fa-trash{
+  cursor: pointer;
+  color: red;
+  
+}
+.fa-edit {
+  cursor: pointer;
+  color: blue;
+}
+.fa-check-circle{
+  cursor: pointer;
+  
+}
+.fa-check-circle:hover{
+  color:green;
+}

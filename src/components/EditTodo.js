@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter,Input } from 'reactstrap';
 import { editList } from '../redux/todoactions';
 
 const EditTodo = (props) => {
   const {
-    buttonLabel,
     className,
     todo
   } = props;
@@ -22,11 +21,11 @@ const edit=()=>{
 
   return (
     <div>
-      <Button color="warning" onClick={toggle}>{buttonLabel}</Button>
+      <i className="fa fa-edit fa-lg" onClick={toggle}/>
       <Modal isOpen={modal} toggle={toggle} className={className}>
         <ModalHeader toggle={toggle}>Edit</ModalHeader>
         <ModalBody>
-          <input type='text' value={editTask} onChange={(e)=>setEditTask(e.target.value)} />
+          <Input type='text' value={editTask} onChange={(e)=>setEditTask(e.target.value)} />
         </ModalBody>
         <ModalFooter>
           <Button color="primary" onClick={edit}>Save</Button>{' '}

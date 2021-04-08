@@ -6,23 +6,28 @@ const Todo = ({todo}) => {
     const dispatch = useDispatch();
  
     return (
-        <div className="row">
+        <div className="container">
             
-                <div className="col-md-6 offset-1">
+        <div className="row jumbotron">
+            
+        <div className="col-md-8">
             <p  style={
           todo.isCompleted
             ? { textDecoration: "line-through" }
             : {  }
-        }>{todo.text}</p></div>
-        <div className="col-md-1">
-            <input type='checkbox' onClick={()=>dispatch(complete(todo.id))}/>
-            </div>
-            <div className="col-md-1">
-            <button className="btn btn-danger" onClick={()=>dispatch(deletetodo(todo.id))}>delete</button></div>
-            <div className="col-md-1">
-            <EditTodo  buttonLabel="Edit" todo={todo}/></div>
-            
+        }>{todo.text}</p>
         </div>
+        <div className="col-md-4" style={{display:"flex",justifyContent:"space-between"}}>
+            
+            <i style={todo.isCompleted?{color:"green"}:{}} className="fa fa-check-circle fa-lg" onClick={()=>dispatch(complete(todo.id))}/>
+            
+                <i className="fa fa-trash fa-lg" onClick={()=>dispatch(deletetodo(todo.id))}/>
+        
+            
+            <EditTodo   todo={todo}/></div>
+        </div>
+        </div>
+        
     )
 }
 

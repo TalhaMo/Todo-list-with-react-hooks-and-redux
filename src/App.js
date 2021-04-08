@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React from 'react';
 import './App.css';
 import InputToDo from './components/InputToDo'
 import Todolist from './components/Todolist'
